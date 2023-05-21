@@ -24,17 +24,17 @@ const Main = (props) => {
     });
   };
 
-  const updatePeople = async (person, id) => {
-    // make put request to create people
+  const updatePic = async (spic, id) => {
+    // make put request to create
     await fetch(url + id, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
       },
-      body: JSON.stringify(person),
+      body: JSON.stringify(spic),
     });
-    // update list of people
-    getPeople();
+    // update list
+    getPic();
   };
 
   const deletePeople = async (id) => {
