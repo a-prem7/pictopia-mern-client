@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import About from "../pages/About";
+import Create from "../pages/Create";
 
 const Main = (props) => {
   const [pic, setPic] = useState(null);
-  //   const url = "https://peopleapp-8vpg.onrender.com/people/";
+
   const url = "http://localhost:4000/pic/";
 
   const getPic = async () => {
@@ -53,15 +55,17 @@ const Main = (props) => {
       <Routes>
         <Route
           exact
-          path="/"
-          element={<Index pic={pic} createPic={createPic} />}
+          path="/create"
+          element={<Create pic={pic} createPic={createPic} />}
         />
+        <Route exact path="/" element={<Index />} />
         <Route
           path="/pic/:id"
           element={
             <Show pic={pic} updatePic={updatePic} deletePic={deletePic} />
           }
         />
+        <Route path="/about" element={<About />} />
       </Routes>
     </main>
   );

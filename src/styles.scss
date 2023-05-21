@@ -2,8 +2,8 @@
 // --------------------------
 // VARIABLES
 // --------------------------
-$maincolor: black;
-$contrastcolor: white;
+$maincolor: rgb(88, 17, 24);
+$contrastcolor: rgb(232, 217, 217);
 
 @mixin white-text-black-bg {
   color: $contrastcolor;
@@ -22,13 +22,13 @@ $contrastcolor: white;
 nav {
   @include white-text-black-bg;
   display: flex;
-  justify-content: flex-start;
+//   justify-content: center;
 
   a {
     @include white-text-black-bg;
     div {
       margin: 10px;
-      font-size: large;
+    //   font-size: large;
     }
   }
 }
@@ -70,12 +70,47 @@ button#delete {
 // --------------------------
 
 img {
-  width: 300px;
-  height: 300px;
-  border-radius: 90px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
-.person {
+.spic {
   display: inline-block;
+  padding: 10px;
+  text-decoration: none;
 }
+
+.maintitle {
+    text-decoration: none;
+    font-weight: bolder;
+    text-align: center;
+    margin:1em;  
+    font-size: 30px;
+    padding: 0 0 0 30px;
+    // padding-top: 0.3rem;
+    color: rgb(33, 204, 24);
+    
+}
+
+body {
+    background-image: url ("https://images.pexels.com/photos/866351/pexels-photo-866351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-color: rgb(184, 223, 236);
+
+  
+}
+
+.about {
+    text-align: right;
+    padding: 20px;
+}
+
+.create {
+    padding: 20px;
+}
+
+.spic-title {
+    text-decoration: none;
+}
+

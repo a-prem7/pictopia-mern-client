@@ -1,6 +1,7 @@
 import React from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 
 const Show = (props) => {
   const { id } = useParams();
@@ -51,10 +52,14 @@ const Show = (props) => {
           {" "}
           {isEditing ? "Cancel Edit" : "Edit"}
         </button>
-        <button onClick={handleDelete}>Delete</button>
+        <Button variant="primary" onClick={handleDelete}>
+          Delete
+        </Button>
         <ul>
           <li>
-            <Link to="/">Back</Link>
+            <a href="/">
+              <button>Back</button>
+            </a>
           </li>
         </ul>
       </>

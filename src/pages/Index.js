@@ -1,37 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Index(props) {
+const Index = ({ pic }) => {
+  const [picData, setPicData] = useState(null);
+
+  useEffect(() => {
+    // Fetch game data from Mongo
+    fetch("http://localhost:4000/pic")
+      .then((response) => response.json())
+      .then((data) => setPicData(data))
+      .catch((error) => console.log(error));
+  }, []);
   // state to hold formData
-  const [newForm, setNewForm] = useState({
-    title: "",
-    image: "",
-    description: "",
-  });
 
-  // handleChange function for form
-  const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.name]: event.target.value });
-  };
-
-  // handle submit function for form
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.createPic(newForm);
-    setNewForm({
-      title: "",
-      image: "",
-      description: "",
-    });
-  };
   // loaded function
   const loaded = () => {
-    return props.pic.map((spic) => (
+    console.log(pic);
+    return picData.map((spic) => (
       <div key={spic._id} className="spic">
         <Link to={`/pic/${spic._id}`}>
-          <h1>{spic.title}</h1>
+          <h1 className="spic-title">{spic.title}</h1>
         </Link>
-        <img src={spic.image} alt={spic.name} />
+        <img src={spic.image} alt={spic.title} />
         <h3>{spic.description}</h3>
       </div>
     ));
@@ -40,36 +30,6 @@ function Index(props) {
   const loading = () => {
     return <h1>Loading...</h1>;
   };
-
-  return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newForm.title}
-          name="title"
-          placeholder="title"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.image}
-          name="image"
-          placeholder="image URL"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.description}
-          name="description"
-          placeholder="description"
-          onChange={handleChange}
-        />
-        <input type="submit" value="Create Post" />
-      </form>
-      {props.pic ? loaded() : loading()}
-    </section>
-  );
-}
-
+  return <section>{picData ? loaded() : loading()}</section>;
+};
 export default Index;
