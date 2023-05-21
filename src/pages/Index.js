@@ -24,3 +24,52 @@ function Index(props) {
       description: "",
     });
   };
+  // loaded function
+  const loaded = () => {
+    return props.pic.map((spic) => (
+      <div key={spic._id} className="spic">
+        <Link to={`/pic/${spic._id}`}>
+          <h1>{spic.title}</h1>
+        </Link>
+        <img src={spic.image} alt={spic.name} />
+        <h3>{spic.description}</h3>
+      </div>
+    ));
+  };
+
+  const loading = () => {
+    return <h1>Loading...</h1>;
+  };
+
+  return (
+    <section>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={newForm.name}
+          name="name"
+          placeholder="name"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          value={newForm.image}
+          name="image"
+          placeholder="image URL"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          value={newForm.title}
+          name="title"
+          placeholder="title"
+          onChange={handleChange}
+        />
+        <input type="submit" value="Create Person" />
+      </form>
+      {props.people ? loaded() : loading()}
+    </section>
+  );
+}
+
+export default Index;
