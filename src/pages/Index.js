@@ -46,9 +46,9 @@ function Index(props) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newForm.name}
-          name="name"
-          placeholder="name"
+          value={newForm.title}
+          name="title"
+          placeholder="title"
           onChange={handleChange}
         />
         <input
@@ -60,14 +60,14 @@ function Index(props) {
         />
         <input
           type="text"
-          value={newForm.title}
-          name="title"
-          placeholder="title"
+          value={newForm.description}
+          name="description"
+          placeholder="description"
           onChange={handleChange}
         />
-        <input type="submit" value="Create Person" />
+        <input type="submit" value="Create Post" />
       </form>
-      {props.people ? loaded() : loading()}
+      {props.pic ? loaded() : loading()}
     </section>
   );
 }
