@@ -37,16 +37,16 @@ const Main = (props) => {
     getPic();
   };
 
-  const deletePeople = async (id) => {
-    // make delete request to create people
+  const deletePic = async (id) => {
+    // make delete request
     await fetch(url + id, {
       method: "DELETE",
     });
-    // update list of people
-    getPeople();
+    // update list
+    getPic();
   };
 
-  useEffect(() => getPeople(), []);
+  useEffect(() => getPic(), []);
 
   return (
     <main>
