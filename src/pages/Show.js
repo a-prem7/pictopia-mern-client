@@ -5,10 +5,10 @@ import { useState, useEffect } from "react";
 const Show = (props) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const pic= props.pic;
+  const pic = props.pic;
   console.log(id);
 
-  const spic= pic ? pic.find((p) => p._id === id) : null;
+  const spic = pic ? pic.find((p) => p._id === id) : null;
 
   const [editForm, setEditForm] = useState(spic);
   const [isEditing, setIsEditing] = useState(false);
@@ -18,3 +18,83 @@ const Show = (props) => {
       setEditForm(spic);
     }
   }, [spic]);
+  // handling form data change
+  const handleChange = (e) => {
+    setEditForm({
+      ...editForm,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // handling submit event for edit form
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    props.updatePic(editForm, spic._id);
+  };
+
+  const handleEdit = () => {
+    setIsEditing((prevState) => !prevState);
+  };
+  const handleDelete = () => {
+    props.deletePic(spic._id);
+    navigate("/");
+  };
+
+  const loaded = () => {
+    return (
+      <>
+        <h1>{spic.title}</h1>
+        <h2>{spic.description}</h2>
+        <img className="avatar-image" src={spic.image} alt={spic.title} />
+        <h3>{spic.description}</h3>
+        <button onClick={handleEdit}>
+          {" "}
+          {isEditing ? "Cancel Edit" : "Edit"}
+        </button>
+        <button onClick={handleDelete}>Delete</button>
+        <ul>
+          <li>
+            <Link to="/">Back</Link>
+          </li>
+        </ul>
+      </>
+    );
+  };
+  const loading = () => {
+    return <h1>Loading ...</h1>;
+  };
+
+  return (
+    <div className="spic">
+      {spic ? loaded() : loading()}
+      {isEditing && (
+        <form onSubmit={handleUpdate}>
+          <input
+            type="text"
+            value={editForm.title}
+            name="title"
+            placeholder="title"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            value={editForm.image}
+            name="image"
+            placeholder="image url"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            value={editForm.description}
+            name="description"
+            placeholder="description"
+            onChange={handleChange}
+          />
+          <input type="submit" value="Update Post" />
+        </form>
+      )}
+    </div>
+  );
+};
+
+export default Show;
