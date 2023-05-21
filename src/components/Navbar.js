@@ -4,7 +4,7 @@ function Navbar(props) {
   return (
     <nav className="nav">
       <Link to="/">
-        <div>People App</div>
+        <div>Pictopia</div>
       </Link>
     </nav>
   );

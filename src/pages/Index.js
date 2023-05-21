@@ -17,7 +17,7 @@ function Index(props) {
   // handle submit function for form
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.createPeople(newForm);
+    props.createPic(newForm);
     setNewForm({
       title: "",
       image: "",

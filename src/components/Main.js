@@ -46,7 +46,7 @@ const Main = (props) => {
     getPic();
   };
 
-  useEffect(() => getPic(), []);
+  useEffect(() => getPic, []);
 
   return (
     <main>
@@ -54,7 +54,7 @@ const Main = (props) => {
         <Route
           exact
           path="/"
-          element={<Index pic={pic} createPeople={createPic} />}
+          element={<Index pic={pic} createPic={createPic} />}
         />
         <Route
           path="/pic/:id"
