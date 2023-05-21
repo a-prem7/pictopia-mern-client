@@ -54,16 +54,12 @@ const Main = (props) => {
         <Route
           exact
           path="/"
-          element={<Index people={people} createPeople={createPeople} />}
+          element={<Index pic={pic} createPeople={createPic} />}
         />
         <Route
-          path="/people/:id"
+          path="/pic/:id"
           element={
-            <Show
-              people={people}
-              updatePeople={updatePeople}
-              deletePeople={deletePeople}
-            />
+            <Show pic={pic} updatePic={updatePic} deletePic={deletePic} />
           }
         />
       </Routes>
