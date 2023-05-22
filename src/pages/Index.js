@@ -22,7 +22,6 @@ const Index = ({ pic }) => {
           <h1 className="spic-title">{spic.title}</h1>
         </Link>
         <img src={spic.image} alt={spic.title} />
-        <h3>{spic.description}</h3>
       </div>
     ));
   };

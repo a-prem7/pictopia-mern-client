@@ -87,7 +87,7 @@ img {
     font-weight: bolder;
     text-align: center;
     margin:1em;  
-    font-size: 30px;
+    font-size: 35px;
     padding: 0 0 0 30px;
     // padding-top: 0.3rem;
     color: rgb(33, 204, 24);
@@ -96,21 +96,36 @@ img {
 
 body {
     background-image: url ("https://images.pexels.com/photos/866351/pexels-photo-866351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-color: rgb(184, 223, 236);
+    background-color: rgb(199, 226, 235);
 
   
 }
 
 .about {
     text-align: right;
-    padding: 20px;
+    padding: 25px;
 }
 
 .create {
-    padding: 20px;
+    padding: 25px;
 }
 
 .spic-title {
     text-decoration: none;
+}
+.back {
+    margin: 15px;
+    margin-right: 35px;
+    background-color: black;
+    color: white;
+}
+.delete-btn {
+    background-color: lightsalmon;
+    margin: 15px;
+}
+.edit-btn {
+    background-color: rgb(158, 162, 62);
+    margin-right:15px ;
+
 }
 

@@ -47,6 +47,10 @@ const Create = (props) => {
         />
         <input type="submit" value="Create Post" />
       </form>
+
+      <a href="/">
+        <button className="back">Back</button>
+      </a>
     </section>
   );
 };

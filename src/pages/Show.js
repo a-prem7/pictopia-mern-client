@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
 
 const Show = (props) => {
   const { id } = useParams();
@@ -47,21 +46,20 @@ const Show = (props) => {
         <h1>{spic.title}</h1>
         <h2>{spic.description}</h2>
         <img className="avatar-image" src={spic.image} alt={spic.title} />
-        <h3>{spic.description}</h3>
-        <button onClick={handleEdit}>
+        <br></br>
+
+        <button className="edit-btn" onClick={handleEdit}>
           {" "}
           {isEditing ? "Cancel Edit" : "Edit"}
         </button>
-        <Button variant="primary" onClick={handleDelete}>
+        <button className="delete-btn" onClick={handleDelete}>
           Delete
-        </Button>
-        <ul>
-          <li>
-            <a href="/">
-              <button>Back</button>
-            </a>
-          </li>
-        </ul>
+        </button>
+        <br></br>
+
+        <a href="/">
+          <button className="back">Back</button>
+        </a>
       </>
     );
   };
@@ -96,6 +94,7 @@ const Show = (props) => {
             onChange={handleChange}
           />
           <input type="submit" value="Update Post" />
+          <br></br>
         </form>
       )}
     </div>

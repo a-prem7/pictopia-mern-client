@@ -8,7 +8,7 @@ function Navbar(props) {
         style={{
           textDecoration: "none",
           fontFamily: "monospace",
-          fontSize: "30px",
+          fontSize: "25px",
           textAlign: "left",
         }}
       >
@@ -19,7 +19,7 @@ function Navbar(props) {
         style={{
           textDecoration: "none",
           fontFamily: "monospace",
-          fontSize: "30px",
+          fontSize: "25px",
         }}
       >
         <div className="create">Create </div>
@@ -32,7 +32,7 @@ function Navbar(props) {
           fontSize: "30px",
         }}
       >
-        <div className="maintitle">Pictopia</div>
+        <div className="maintitle">Pictopia </div>
       </Link>
     </nav>
   );
