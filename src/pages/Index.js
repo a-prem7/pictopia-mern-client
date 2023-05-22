@@ -37,8 +37,9 @@ const Index = ({ pic }) => {
           >
             {spic.title}
           </h1>
+
+          <img src={spic.image} alt={spic.title} />
         </Link>
-        <img src={spic.image} alt={spic.title} />
       </div>
     ));
   };
