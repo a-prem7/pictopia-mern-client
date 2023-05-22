@@ -24,6 +24,9 @@ const Index = ({ pic }) => {
             textDecoration: "none",
             // color: "#5e3a0e",
             color: "#b54214",
+            fontFamily: "monospace",
+            fontWeight: "bolder",
+            fontSize: "16px",
           }}
         >
           <h1

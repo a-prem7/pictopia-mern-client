@@ -48,7 +48,9 @@ const Main = (props) => {
     getPic();
   };
 
-  useEffect(() => getPic(), []);
+  useEffect(() => {
+    getPic();
+  }, []);
 
   return (
     <main>

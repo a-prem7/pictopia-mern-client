@@ -32,7 +32,9 @@ function Navbar(props) {
           fontSize: "30px",
         }}
       >
-        <div className="maintitle">Pictopia </div>
+        <div className="maintitle">
+          Pictopia<span className="registered-symbol">&#xae;</span>{" "}
+        </div>
       </Link>
     </nav>
   );
