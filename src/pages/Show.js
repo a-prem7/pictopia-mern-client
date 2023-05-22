@@ -43,9 +43,14 @@ const Show = (props) => {
   const loaded = () => {
     return (
       <>
-        <h1>{spic.title}</h1>
+        <h1 className="show-title">{spic.title}</h1>
         <h2>{spic.description}</h2>
-        <img className="avatar-image" src={spic.image} alt={spic.title} />
+        <img
+          id="show-img"
+          className="avatar-image"
+          src={spic.image}
+          alt={spic.title}
+        />
         <br></br>
 
         <button className="edit-btn" onClick={handleEdit}>

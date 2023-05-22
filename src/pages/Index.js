@@ -6,7 +6,7 @@ const Index = ({ pic }) => {
 
   useEffect(() => {
     // Fetch game data from Mongo
-    fetch("http://localhost:4000/pic")
+    fetch("https://pictopiamern.onrender.com/pic/")
       .then((response) => response.json())
       .then((data) => setPicData(data))
       .catch((error) => console.log(error));
@@ -18,8 +18,22 @@ const Index = ({ pic }) => {
     console.log(pic);
     return picData.map((spic) => (
       <div key={spic._id} className="spic">
-        <Link to={`/pic/${spic._id}`}>
-          <h1 className="spic-title">{spic.title}</h1>
+        <Link
+          to={`/pic/${spic._id}`}
+          style={{
+            textDecoration: "none",
+            // color: "#5e3a0e",
+            color: "#b54214",
+          }}
+        >
+          <h1
+            style={{
+              textDecoration: "none",
+            }}
+            className="spic-title"
+          >
+            {spic.title}
+          </h1>
         </Link>
         <img src={spic.image} alt={spic.title} />
       </div>

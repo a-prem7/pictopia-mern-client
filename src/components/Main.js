@@ -8,7 +8,7 @@ import Create from "../pages/Create";
 const Main = (props) => {
   const [pic, setPic] = useState(null);
 
-  const url = "http://localhost:4000/pic/";
+  const url = "https://pictopiamern.onrender.com/pic/";
 
   const getPic = async () => {
     const response = await fetch(url);
@@ -48,7 +48,7 @@ const Main = (props) => {
     getPic();
   };
 
-  useEffect(() => getPic, []);
+  useEffect(() => getPic(), []);
 
   return (
     <main>
